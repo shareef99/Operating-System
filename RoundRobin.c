@@ -39,7 +39,7 @@ int main() {
           p[i].f = 0;
         }
 
-        printf("\nprocess # %-3d %-10d %-10d %-10d", i + 1, time, time + j, p[i].burst - p[i].comp);
+        printf("\nprocess # %d %d %d %d", i + 1, time, time + j, p[i].burst - p[i].comp);
         time += j;
       }
     }
@@ -49,7 +49,7 @@ int main() {
   printf("\nProcess \t Waiting Time TurnAround Time ");
 
   for (i = 0;i < n;i++) {
-    printf("\nProcess # %-12d%-15d%-15d", i + 1, p[i].wait, p[i].wait + p[i].burst);
+    printf("\nProcess # %d %d %d", i + 1, p[i].wait, p[i].wait + p[i].burst);
     totalwait = totalwait + p[i].wait;
     totalturn = totalturn + p[i].wait + p[i].burst;
   }
