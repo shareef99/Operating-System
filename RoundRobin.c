@@ -1,12 +1,11 @@
 #include<stdio.h>
 
-struct process
-{
+struct process {
   int burst, wait, comp, f;
 } p[20] = { 0,0 };
 
 int main() {
-  int n, i, j, totalwait = 0, totalturn = 0, quantum, flag = 1, time = 0;
+  int n, i, j, quantum, totalwait = 0, totalturn = 0, time = 0, flag = 1;
 
   printf("\nEnter The No Of Process :");
   scanf("%d", &n);
@@ -15,7 +14,7 @@ int main() {
   scanf("%d", &quantum);
 
   for (i = 0;i < n;i++) {
-    printf("Enter The Burst Time (in ms) For Process #%2d :", i + 1);
+    printf("Enter The Burst Time (in ms) For Process #%d :", i + 1);
     scanf("%d", &p[i].burst);
     p[i].f = 1;
   }
@@ -31,9 +30,8 @@ int main() {
         flag = 1;
         j = quantum;
 
-        if ((p[i].burst - p[i].comp) > quantum) {
+        if ((p[i].burst - p[i].comp) > quantum)
           p[i].comp += quantum;
-        }
         else {
           p[i].wait = time - p[i].comp;
           j = p[i].burst - p[i].comp;
