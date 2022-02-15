@@ -15,18 +15,15 @@ int main() {
   }
 
   for (i = 0;i < n;i++) {
-    if (i == 0) {
+    if (i == 0)
       star[i] = arr[i];
-      wt[i] = star[i] - arr[i];
-      finish[i] = star[i] + bur[i];
-      tat[i] = finish[i] - arr[i];
-    }
-    else {
+
+    else
       star[i] = finish[i - 1];
-      wt[i] = star[i] - arr[i];
-      finish[i] = star[i] + bur[i];
-      tat[i] = finish[i] - arr[i];
-    }
+
+    wt[i] = star[i] - arr[i];
+    finish[i] = star[i] + bur[i];
+    tat[i] = finish[i] - arr[i];
   }
 
   printf("\nPName Arrtime Burtime Start TAT Finish");
