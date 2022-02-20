@@ -17,7 +17,6 @@ int main() {
   for (i = 0;i < n;i++) {
     if (i == 0)
       star[i] = arr[i];
-
     else
       star[i] = finish[i - 1];
 
@@ -34,6 +33,6 @@ int main() {
     tottat += tat[i];
   }
 
-  printf("\nAverage Waiting time:%f", (float)totwt);
-  printf("\nAverage Turn Around Time:%f", (float)tottat);
+  printf("\nAverage Waiting time: %d", totwt);
+  printf("\nAverage Turn Around Time: %d", tottat);
 }

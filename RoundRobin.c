@@ -50,13 +50,13 @@ int main() {
 
   for (i = 0;i < n;i++) {
     printf("\nProcess # %d %d %d", i + 1, p[i].wait, p[i].wait + p[i].burst);
-    totalwait = totalwait + p[i].wait;
-    totalturn = totalturn + p[i].wait + p[i].burst;
+    totalwait += p[i].wait;
+    totalturn += p[i].wait + p[i].burst;
   }
 
   printf("\n\nAverage\n------------------ ");
-  printf("\nWaiting Time: %fms", totalwait / (float)n);
-  printf("\nTurnAround Time : %fms\n\n", totalturn / (float)n);
+  printf("\nWaiting Time: %d ms", totalwait / n);
+  printf("\nTurnAround Time : %d ms\n\n", totalturn / n);
 
   return 0;
 }
